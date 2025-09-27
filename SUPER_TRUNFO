@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main() {
+    char codigo[4], cidade[50], estado[50];
+    long long populacao, pib;
+    double area;
+    int pontos;
+    int i, j;
+    
+    printf("SUPER TRUNFO - CADASTRO DE CARTAS\n\n");
+    
+    for (i = 0; i < 8; i++) {  // 8 estados (A-H)
+        for (j = 0; j < 4; j++) {  // 4 cidades por estado
+            
+            // Gerar código (A01, A02, etc.)
+            sprintf(codigo, "%c%02d", 'A' + i, j + 1);
+            
+            printf("\n=== CARTA %s ===\n", codigo);
+            
+            printf("Nome da Cidade: ");
+            scanf("%s", cidade);
+            
+            printf("Nome do Estado: ");
+            scanf("%s", estado);
+            
+            printf("Populacao: ");
+            scanf("%lld", &populacao);
+            
+            printf("Area (km²): ");
+            scanf("%lf", &area);
+            
+            printf("PIB (milhoes): ");
+            scanf("%lld", &pib);
+            
+            printf("Pontos Turisticos: ");
+            scanf("%d", &pontos);
+            
+            // Exibir dados cadastrados
+            printf("\n*** CARTA CADASTRADA ***\n");
+            printf("Codigo: %s\n", codigo);
+            printf("Cidade: %s\n", cidade);
+            printf("Estado: %s\n", estado);
+            printf("Populacao: %lld\n", populacao);
+            printf("Area: %.2f\n", area);
+            printf("PIB: %lld\n", pib);
+            printf("Pontos Turisticos: %d\n", pontos);
+            printf("====================\n\n");
+        }
+    }
+    
+    printf("Todas as cartas foram cadastradas!\n");
+    return 0;
+}
